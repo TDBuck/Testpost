@@ -1,7 +1,7 @@
 var c = new CETEI();
 var base = "http://www.perseids.org/tools/arethusa/app/#/jmh?collid=<COLLID>&objid=<OBJID>&doc=<DOC>&chunk=<CHUNK>";
 var params = window.location.hash.substring(1).split('-');
-var raw = "https://raw.githubusercontent.com/tdbuck/testpostpleaseignore/master/CITE_TREEBANK_XML/perseus/";
+var raw = "https://raw.githubusercontent.com/tdbuck/testpostpleaseignore/master/CITE_TREEBANK_XML/perseus/lattb/";
       
 
 /***********************************
