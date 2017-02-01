@@ -15,7 +15,7 @@
         <div><p>this is a test page for the script to populate a table with some stuff.</p></div>
         <div id="myExample">
             <div id="myform">
-                <b>Simple form with name and age ...</b>
+                <b>Input for data here</b>
                 <table>
                     <tr>
                         <td>Author:</td>
@@ -32,7 +32,11 @@
                     <tr>
                         <td>Locus:</td>
                         <td><input type="text" id="Locus"/>
-                            <input type="button" id="add" value="Add" onclick="Javascript:addRow()"/></td>
+                        </td></tr>
+                            <tr>
+                                <td>LocusLink</td>
+                                <td> <input type="text" class="url" id="LocusLink" />
+                            <input type="button" id="addrow" value="Add" onclick="Javascript:addRow()"/></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -41,8 +45,8 @@
                 </table>
             </div>
             <div id="mydata">
-                <b>Current data in the system ...</b>
-                <table id="myTableData"  border="1" cellpadding="2">
+                <b>data that has been staged for being imported</b>
+                <table id="myTableData"  border="1" cellpadding="2" width="500">
                     <tr>
                         <td>&nbsp;</td>
                         <td><b>Author</b></td>

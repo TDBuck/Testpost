@@ -1,11 +1,18 @@
+
 function addRow() {
 
 var Author = document.getElementById("Author");
 var Title = document.getElementById("Title");
 var Editor = document.getElementById("Editor");
 var Locus = document.getElementById("Locus");
+var LocusLink = document.getElementById("LocusLink");
 var table = document.getElementById("myTableData");
 
+
+
+        
+        
+        
 var rowCount = table.rows.length;
 var row = table.insertRow(rowCount);
 
@@ -14,7 +21,12 @@ row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Jav
     row.insertCell(2).innerHTML= Title.value;
     row.insertCell(3).innerHTML= Editor.value;
     row.insertCell(4).innerHTML= Locus.value;
-    
+ 
+  var createA = document.createElement('a');
+        createA.setAttribute('href', LocusLink);
+        createA.appendChild(Locus.value);
+        getTheTableTag.appendChild(createA);
+ 
     }
     
     function deleteRow(obj) {
@@ -41,7 +53,7 @@ row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Jav
         
         for (var j=0; j<6; j++){
         var td = document.createElement('TD');
-        td.width='75';
+        td.width='400';
         td.appendChild(document.createTextNode("Cell " + i + "," + j));
         tr.appendChild(td);
         }
