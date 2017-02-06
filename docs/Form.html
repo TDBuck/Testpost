@@ -7,13 +7,12 @@
                     <link rel="stylesheet" href="stylesheets/github-dark.css"/>
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
                         <script type="text/javascript" src="javascripts/script.js"></script>
-                        <script type="text/javascript" src="javascripts/sentences.js"></script>
                         <script type="text/javascript" src="javascripts/input.js"></script>
         <title>The Input form</title>
     </head>
     <body>
         <div><p>this is a test page for the script to populate a table with some stuff.</p></div>
-        <div id="myExample">
+        <div>
             <div id="myform">
                 <b>Input for data here</b>
                 <table>
@@ -33,30 +32,37 @@
                         <td>Locus:</td>
                         <td><input type="text" id="Locus"/>
                         </td></tr>
-                            <tr>
-                                <td>LocusLink</td>
-                                <td> <input type="text" class="url" id="LocusLink" />
-                            <input type="button" id="addrow" value="Add" onclick="Javascript:addRow()"/></td>
-                    </tr>
+                    <tr>
+                        <td>Link:</td>
+                        <td><input type="text" id="Link"/><input type="button" id="addrow" value="Add" onclick="javascripts:addRow()"/>
+                        </td></tr>
+                           
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
                 </table>
+                
+                
             </div>
-            <div id="mydata">
+            <form id="treetable" action="#" method="post">
+            <div id="mydata" contenteditable="true">
                 <b>data that has been staged for being imported</b>
-                <table id="myTableData"  border="1" cellpadding="2" width="500">
+                <table id="myTableData"  border="1" cellpadding="2" width="500" >
                     <tr>
                         <td>&nbsp;</td>
                         <td><b>Author</b></td>
                         <td><b>Title</b></td>
                         <td><b>Editor</b></td>
                         <td><b>Locus</b></td>
+                        <td><b>Link</b></td>
                     </tr>
                 </table>
                 &nbsp;<br/>
-            </div>
+            </div> 
+            </form>
+            <div id="alert"></div>
+            <input id="UpdateTable" type="button" value="UpdateTable" />
             
         </div> 
     </body>

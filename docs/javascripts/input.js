@@ -1,31 +1,30 @@
 
+    
+    
 function addRow() {
 
-var Author = document.getElementById("Author");
-var Title = document.getElementById("Title");
-var Editor = document.getElementById("Editor");
-var Locus = document.getElementById("Locus");
-var LocusLink = document.getElementById("LocusLink");
-var table = document.getElementById("myTableData");
+    var Author = document.getElementById("Author");
+    var Title = document.getElementById("Title");
+    var Editor = document.getElementById("Editor");
+    var Locus = document.getElementById("Locus");
+    var LocusLink = document.getElementById("Link");
+    var table = document.getElementById("myTableData");      
+    var link = '<a href="'+LocusLink.value+'">View in Arethusa</a>';
+      
 
-
-
-        
+               
         
         
 var rowCount = table.rows.length;
 var row = table.insertRow(rowCount);
 
-row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+    row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
     row.insertCell(1).innerHTML= Author.value;
     row.insertCell(2).innerHTML= Title.value;
     row.insertCell(3).innerHTML= Editor.value;
     row.insertCell(4).innerHTML= Locus.value;
+    row.insertCell(5).innerHTML= link;
  
-  var createA = document.createElement('a');
-        createA.setAttribute('href', LocusLink);
-        createA.appendChild(Locus.value);
-        getTheTableTag.appendChild(createA);
  
     }
     
@@ -56,6 +55,7 @@ row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Jav
         td.width='400';
         td.appendChild(document.createTextNode("Cell " + i + "," + j));
         tr.appendChild(td);
+        tr.attr('id", "newtree');
         }
         }
         myTableDiv.appendChild(table);
@@ -67,3 +67,16 @@ row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Jav
         console.log("Page load finished");
         
         }
+        
+        
+$('#UpdateTable').click( function() {
+  var myData = $('#myData').val();
+  if($("#myData").val() == '') {
+    $('#alert').html("<strong>Warning!</strong> You did not add any data");
+    $('#alert').fadeIn().delay(1000).fadeOut();
+    return false;
+   }
+   var newtree = $('#newtree').html();
+   localStorage.setItem('newtree', newtree);
+   return false;
+});
