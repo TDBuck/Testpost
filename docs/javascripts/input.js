@@ -48,14 +48,16 @@ var row = table.insertRow(rowCount);
     
     for (var i=0; i<5; i++){
         var tr = document.createElement('TR');
+        tr.setAttribute("id","newtree");
         tableBody.appendChild(tr);
+    
         
         for (var j=0; j<6; j++){
         var td = document.createElement('TD');
         td.width='400';
         td.appendChild(document.createTextNode("Cell " + i + "," + j));
         tr.appendChild(td);
-        tr.attr('id", "newtree');
+        
         }
         }
         myTableDiv.appendChild(table);
@@ -69,14 +71,33 @@ var row = table.insertRow(rowCount);
         }
         
         
-$('#UpdateTable').click( function() {
-  var myData = $('#myData').val();
-  if($("#myData").val() == '') {
+function UpdateTable() {
+  var myData = $('#newtree').val();
+  if($("#newtree").val() == '') {
     $('#alert').html("<strong>Warning!</strong> You did not add any data");
     $('#alert').fadeIn().delay(1000).fadeOut();
     return false;
    }
+   
+   
    var newtree = $('#newtree').html();
    localStorage.setItem('newtree', newtree);
    return false;
-});
+   
+   
+};
+
+
+
+function DisableDevice(){
+    window.localStorage.clear();
+    location.reload();
+    return false;
+};
+
+window.onload = function Searchfortraps() {
+    if(localStorage.getItem('newtree')) {
+    $('#newtree').html(localStorage.getItem('newtree'));
+    } 
+};
+

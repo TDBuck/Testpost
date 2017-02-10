@@ -45,11 +45,11 @@
                 
                 
             </div>
-            <form id="treetable" action="#" method="post">
+            
             <div id="mydata" contenteditable="true">
                 <b>data that has been staged for being imported</b>
                 <table id="myTableData"  border="1" cellpadding="2" width="500" >
-                    <tr>
+                    <tr >
                         <td>&nbsp;</td>
                         <td><b>Author</b></td>
                         <td><b>Title</b></td>
@@ -60,10 +60,11 @@
                 </table>
                 &nbsp;<br/>
             </div> 
-            </form>
-            <div id="alert"></div>
-            <input id="UpdateTable" type="button" value="UpdateTable" />
             
+            <div id="alert"></div>
+            <input id="UpdateTable" type="button" value="UpdateTable" onclick="javascript:UpdateTable()"/>
+            <input id="DisableDevice" type="button" value="ClearSavedData" onclick="javascript:DisableDevice()"/>
+            <input id="gotoindex" type="button" value="Go to Main Page" onclick="docs/index.html"/>
         </div> 
     </body>
 </html>

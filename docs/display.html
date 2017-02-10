@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Treebank Publication Prototype</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/arethusa.packages.min.js""></script>
+<script type="text/javascript" src="js/arethusa.min.js""></script>
+<script type="text/javascript" src="js/arethusa.widget.loader.js""></script>
+
+</head>
+<body>
+<div class="__artsa">
+  <div id="treebank_container">
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var deps = {
+    "css": {  
+      "arethusa":"css/arethusa.min.css",
+      "colorpicker":"css/colorpicker.css",
+      "font_awesome":"css/font-awesome.min.css",
+      "foundation":"css/foundation-icons.css"
+    },
+    "js":{
+      "arethusa":"js/arethusa.min.js",
+       "packages":"js/arethusa.packages.min.js"
+    }
+  }
+
+  window.i18npath = "i18n/";
+  window.dagred3path = "vendor/dagre-d3.min.js";
+  loadArethusaWidget(
+    "treebank_container",
+    "js/",
+    "tbpub.json",
+    { doc: "1.tb.xml" },
+    deps
+  ); 
+});
+</script>
