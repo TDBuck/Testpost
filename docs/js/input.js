@@ -7,9 +7,20 @@ function addRow() {
     var Title = document.getElementById("Title");
     var Editor = document.getElementById("Editor");
     var Locus = document.getElementById("Locus");
+    var Lang = document.getElementById("Lang");
     var LocusLink = document.getElementById("Link");
-    var table = document.getElementById("myTableData");      
-    var link = '<a href="'+LocusLink.value+'">View in Arethusa</a>';
+    var table = document.getElementById("myTableData");
+
+    if (Lang = "Latin") {
+        var Display = '<a href="display.html#/lattb-'+LocusLink.value+'-lattb.'+LocusLink.value+'.1.tb.xml">View in Arethusa</a>';
+    }
+    else if (Lang = "Greek") {
+        var Display = '<a href="'+window.location.hostname+'/display.html#/grctb-'+LocusLink.value+'-grctb.'+LocusLink.value+'1.tb.xml">View in Arethusa</a>';
+    }
+    else {
+        var Display = '<a href="'+window.location.hostname+'/display.html#/misctb-'+LocusLink.value+'-misctb.'+LocusLink.value+'1.tb.xml">View in Arethusa</a>';
+    };
+    
       
 
                
@@ -23,7 +34,7 @@ var row = table.insertRow(rowCount);
     row.insertCell(2).innerHTML= Title.value;
     row.insertCell(3).innerHTML= Editor.value;
     row.insertCell(4).innerHTML= Locus.value;
-    row.insertCell(5).innerHTML= link;
+    row.insertCell(5).innerHTML= Display;
  
  
     }

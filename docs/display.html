@@ -28,15 +28,15 @@ $(document).ready(function() {
        "packages":"js/arethusa.packages.min.js"
     }
   }
-
+var params = window.location.hash.substring(1).split('-');
+var base = "perseus/<COLLID>/<OBJID>/<DOC>"
   window.i18npath = "i18n/";
   window.dagred3path = "vendor/dagre-d3.min.js";
   loadArethusaWidget(
     "treebank_container",
     "js/",
     "tbpub.json",
-    { doc: "lattb.4253.1.tb.xml" },
-    { doc: "lattb.4260.1.tb.xml" },
+    { doc: base.replace("<COLLID>",params[0]).replace("<OBJID>",params[1]).replace("<DOC>",params[2]) },
     deps
   ); 
 });
