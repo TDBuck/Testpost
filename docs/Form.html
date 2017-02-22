@@ -32,9 +32,13 @@
                         <td>Locus:</td>
                         <td><input type="text" id="Locus"/>
                         </td></tr>
+                         <tr>
+                        <td>Lang:</td>
+                        <td><input type="text" id="Lang"/>
+                        </td></tr>
                     <tr>
                         <td>Link:</td>
-                        <td><input type="text" id="Link"/><input type="button" id="addrow" value="Add" onclick="js:addRow()"/>
+                        <td><input type="text" id="Link"/><input type="button" id="addrow" value="Add" onclick="javascript:addRow()"/>
                         </td></tr>
                            
                     <tr>
@@ -64,7 +68,7 @@
             <div id="alert"></div>
             <input id="UpdateTable" type="button" value="UpdateTable" onclick="javascript:UpdateTable()"/>
             <input id="DisableDevice" type="button" value="ClearSavedData" onclick="javascript:DisableDevice()"/>
-            <input id="gotoindex" type="button" value="Go to Main Page" onclick="docs/index.html"/>
+            <input id="gotoindex" type="button" value="Go to Main Page" onclick="location.hostname"/>
         </div> 
     </body>
 </html>
